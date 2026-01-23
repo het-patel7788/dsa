@@ -390,6 +390,64 @@ int main(){
 
 
     //take input as n and print something like this
+    /*
+    
+       ****
+      ****
+     ****
+    ****
+    
+    */
+    // int n ;
+    // cout << "Enter the number n: ";
+    // cin >> n;
+
+    // for(int i = 1; i <= n; i++){
+    //     for(int j = 1; j <= n-i; j++){
+    //         cout << " ";
+    //     }
+    //     for(int k = 1; k <= n; k++){
+    //         cout << "*";
+    //     }
+    //     cout << endl;
+    // }
+
+
+
+
+    //print this pattern 
+    /*
+    
+            1
+           212
+          32123
+         4321234
+        543212345
+    
+    */
+
+    int n;
+    cout << "Enter value of n: ";
+    cin >> n;
+
+    for(int i=1; i<=n; i++){
+        for(int j = 1; j<=n-i; j++){
+            cout << " ";
+        }
+
+        //num backward
+        for(int k = i; k>= 1; k--){
+            cout << k;
+        }
+
+        //num forword
+        for(int l = 2; l <= i; l++){
+            cout << l;
+        }
+        cout << endl;
+
+    }
+
 
     return 0;
 }
