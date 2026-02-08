@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void insertionSort(int arr[], int n){
+    for(int i = 1; i < n; i++){
+        int curr = arr[i];  //value to use in comp
+        int prev = i-1;  //index to do comp of val
+        while(prev >= 0 && arr[prev] > curr){
+            swap(arr[prev], arr[prev + 1]);
+            prev--;
+        }
+        arr[prev + 1] = curr ;
+    }
+
+    for(int i = 0; i < n; i++){
+        cout << arr[i] << " ";
+    }
+}
+
+int main(){
+
+    int arr[5] = {2, 4, 3, 1, 5};
+
+    insertionSort(arr, 5);
+
+    return 0;
+}
