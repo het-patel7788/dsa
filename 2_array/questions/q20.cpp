@@ -1,0 +1,37 @@
+// Check if One String Swap Can Make Strings Equal
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+bool areAlmostEqual(string s1, string s2) {
+    if (s1 == s2) return true;
+
+    vector<int> diff;
+    for(int i = 0; i < s1.size(); i++) {
+        if(s1[i] != s2[i]) {
+            diff.push_back(i);
+        }
+    }
+
+    if(diff.size() != 2) return false;
+
+    if(s1[diff[0]] == s2[diff[1]] && s1[diff[1]] == s2[diff[0]]) {
+        return true;
+    }
+
+    return false;
+}
+
+int main() {
+    string s1 = "bank";
+    string s2 = "kanb";
+    
+    if(areAlmostEqual(s1, s2)) {
+        cout << "true" << endl;
+    } else {
+        cout << "false" << endl;
+    }
+
+    return 0;
+}
