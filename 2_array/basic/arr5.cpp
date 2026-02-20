@@ -137,25 +137,57 @@
 
 //Count set bits in a number (Amazon, Google)
 //check only last dighit and do a right shift by 1 , do it until num becomes 0
+// #include <iostream>
+// using namespace std;
+
+// int countSetBits(int num){
+//     int count = 0;
+
+//     while(num > 0){
+//         if(num & 1){
+//             count++;
+//         }
+//         num = num >> 1;
+//     }
+
+//     return count;
+// }
+
+// int main(){
+
+//     cout << countSetBits(15);
+
+//     return 0;
+// }
+
+
+
+
+
+
+//Fast exponentiation
 #include <iostream>
 using namespace std;
 
-int countSetBits(int num){
-    int count = 0;
+void fastExpo(int x, int n){
+    int ans = 1;
 
-    while(num > 0){
-        if(num & 1){
-            count++;
+    while(n>0){
+        int lastBit = n & 1;
+        if(lastBit){
+            ans = ans * x;
         }
-        num = num >> 1;
+
+        x = x * x;
+        n = n >> 1;
     }
 
-    return count;
+    cout << ans << endl;
 }
 
 int main(){
 
-    cout << countSetBits(15);
+    fastExpo(3, 5);
 
     return 0;
 }
