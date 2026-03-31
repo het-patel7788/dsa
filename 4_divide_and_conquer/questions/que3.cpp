@@ -35,14 +35,10 @@ int majorityElementRec(vector<int>& nums, int left, int right) {
     }
 }
 
-int majorityElement(vector<int>& nums) {
-    return majorityElementRec(nums, 0, nums.size() - 1);
-}
-
 int main() {
     vector<int> nums = {2,3,3,3,3,3,2};
     
-    cout << majorityElement(nums) << "\n";
+    cout << majorityElementRec(nums, 0, nums.size() - 1) << "\n";
     
     return 0;
 }
