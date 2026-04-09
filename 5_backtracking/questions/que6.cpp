@@ -38,7 +38,6 @@ vector<string> findPath(vector<vector<int>> &mat){
 
     vector<string> ans;
     string path = "";
-    vector<vector<bool>> vis(n, vector<bool>(n, false));
 
     helper(mat, 0, 0, path, ans);
 
